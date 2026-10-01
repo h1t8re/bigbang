@@ -31,7 +31,7 @@ def get_math_functions():
 	libraries_functions.append(("numpy", [x for x in dir(numpy) if "__" not in x]))
 	libraries_functions.append(("sympy", [x for x in dir(sympy) if "__" not in x]))
 	libraries_functions.append(("mp", [x for x in dir(mp) if "__" not in x]))
-	libraries_functions.append(("math_axioms", "+-*/"))
+	libraries_functions.append(("operators", [x for x in dir(operator) if "__" not in x]))
 	return libraries_functions
 
 def make_function_callable(library_name, function_name):
@@ -51,8 +51,8 @@ def make_function_callable(library_name, function_name):
 		function_call = getattr(sympy, function_name)
 	elif library_name == "mp":
 		function_call = getattr(mp, function_name)
-	elif library_name == "math_axioms":
-		function_call = operations[function_name]
+	elif library_name == "operators":
+		function_call = getattr(operator, function_name)
 	return function_call
 
 def yellowing_functions(func, libraries_of_functions):
@@ -76,3 +76,5 @@ def main():
 			for equality in yellowing_math_to_world(libraries_of_functions):
 				yield unit, equality
 
+if __name__ == "__main__":
+	main()
