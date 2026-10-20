@@ -21,9 +21,9 @@ def infinity_space_generator(r):
 			yield (x, y, z)
 			for (i, j, k) in infinity_space_generator(x):
 				yield (i, j, k)
-			for (i, j , k), r2, teta2, phi2 in infinity_space_generator(y):
+			for (i, j , k) in infinity_space_generator(y):
 				yield (i, j, k)
-			for (i, j , k), r3, teta3, phi3 in infinity_space_generator(z):
+			for (i, j , k) in infinity_space_generator(z):
 				yield (i, j, k)
 
 def infinity_space_and_time_generator():
@@ -82,7 +82,7 @@ def main():
 	libraries_of_functions = get_math_functions()
 	for (x, y ,z) in infinity_space_and_time_generator():
 		for equality in yellowing_math_to_world(libraries_of_functions):
-			yield (x, y, z)
+			yield (x, y, z), equality
 
 if __name__ == "__main__":
 	main()
