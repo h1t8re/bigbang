@@ -44,12 +44,6 @@ def get_math_functions():
 	return libraries_functions
 
 def make_function_callable(library_name, function_name):
-	operations = {
-	"+": operator.add,
-	"-": operator.sub,
-	"*": operator.mul,
-	"/": operator.truediv
-	}
 	if library_name == "math":
 		function_call = getattr(math, function_name)
 	elif library_name == "cmath":
