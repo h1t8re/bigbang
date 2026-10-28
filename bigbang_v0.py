@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright Chems eddine h1t8re 6.2.1996 After Jesus Christ'e
+# Copyright Chems eddine h1t8re 6.2.1996 After Jesus Christ'
 
 import math as math
 import cmath as cmath
